@@ -14,6 +14,15 @@ function fetchWeather(city) {
     ).then((response) => { 
             return response.json().then((data) => {
                 console.log(data);
+                if (!response.ok){
+                    switch(response.status){
+                        case 400:
+                            console.log("Ви нічого не ввели");
+                            break;
+                        case 404:
+                            console.log("Вашого міста не існує, так само як і Житомира")
+                    }
+                }
                 result.innerHTML = "City: " + data.name + '</br>' +
                     "Temperature: " + data.main.temp + '</br>' +
                     "Pressure: " + data.main.pressure + '</br>' +
@@ -27,13 +36,15 @@ function fetchWeather(city) {
                             break;
                     }
                 return data;
-            }).catch((err) => {
-                
+            })
+            .catch((err) => {
+                console.log(err)
             })
         });
 
 }
 function searchWeather(){
+    result.innerHTML =""
     let inputValue = document.querySelector("#city_input").value;
     fetchWeather(inputValue);
     console.log(inputValue);
