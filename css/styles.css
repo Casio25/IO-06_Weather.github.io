@@ -57,3 +57,6 @@ button {
     appearance: button;
     backface-visibility: hidden;
 }
+button:hover{
+    background-color: #354dd2;
+}
