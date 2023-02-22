@@ -17,10 +17,10 @@ function fetchWeather(city) {
                 if (!response.ok){
                     switch(response.status){
                         case 400:
-                            console.log("Ви нічого не ввели");
+                            alert("Ви нічого не ввели");
                             break;
                         case 404:
-                            console.log("Вашого міста не існує, так само як і Житомира")
+                            alert("Вашого міста не існує, так само як і Житомира")
                     }
                 }
                 result.innerHTML = "City: " + data.name + '</br>' +
@@ -30,9 +30,33 @@ function fetchWeather(city) {
                     "Speed: " + data.wind.speed + '</br>' +
                     "Degree: " + data.wind.deg + '</br>' +
                     "Icon: " + '<img src="https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png">' + '</br>';
-                    switch (data.weather[0].main){
-                        case "Clouds":
-                            console.log("it's  rain");
+                    switch (data.weather[0].description){
+                        case "clear sky":
+                            console.log("clear sky");
+                            break;
+                        case "few clouds":
+                            console.log("few clouds");
+                            break;
+                        case "scattered clouds":
+                            console.log("scattered clouds");
+                            break;
+                        case "broken clouds":
+                            console.log("broken clouds");
+                            break;
+                        case "shower rain":
+                            console.log("shower rain");
+                            break;
+                        case "rain":
+                            console.log("rain");
+                            break;
+                        case "thunderstorm":
+                            console.log("thunderstorm");
+                            break;
+                        case "snow":
+                            console.log("snow");
+                            break;
+                        case "mist":
+                            console.log("mist");
                             break;
                     }
                 return data;
