@@ -26,7 +26,10 @@
 }
 
 .result{
-    color: aliceblue;
-    padding-top: 2em;
-    background-color:#6F8FAF;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    background: #eaeaea
+
 }
