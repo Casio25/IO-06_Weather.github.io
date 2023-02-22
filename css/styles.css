@@ -2,10 +2,6 @@
     margin: 0;
 }
 
-.header {
-    background-color:#008080;
-    color: aliceblue;
-}
 .menu, .input_form {
     display: inline-block;
 }
