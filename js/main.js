@@ -1,4 +1,4 @@
-console.log("Hello World!");
+
 const inputForm = document.querySelector(".input_form");
 const inputField = inputForm.querySelector("#city_input");
 const searchButton = inputForm.querySelector("#search_button");
