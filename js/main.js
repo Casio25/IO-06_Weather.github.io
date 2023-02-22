@@ -4,6 +4,7 @@ const inputField = inputForm.querySelector("#city_input");
 const searchButton = inputForm.querySelector("#search_button");
 let result = document.querySelector('.result');
 
+
 let weather = {
     "apiKey": "6a2460f385d8fbe77660e390eb988c73"
 }
@@ -28,8 +29,8 @@ function fetchWeather(city) {
                     "Pressure: " + data.main.pressure + '</br>' +
                     "Humidity: " + data.main.humidity + '</br>' +
                     "Speed: " + data.wind.speed + '</br>' +
-                    "Degree: " + data.wind.deg + '</br>' +
-                    "Icon: " + '<img src="https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png">' + '</br>';
+                    "Degree: " + data.wind.deg + '</br>' + 
+                    '<img src="https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png">' + '</br>';
                     switch (data.weather[0].description){
                         case "clear sky":
                             console.log("clear sky");
@@ -72,6 +73,7 @@ function searchWeather(){
     let inputValue = document.querySelector("#city_input").value;
     fetchWeather(inputValue);
     console.log(inputValue);
+    result.style.display = "block";
 
 }
 searchButton.addEventListener('click', searchWeather);

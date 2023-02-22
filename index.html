@@ -7,9 +7,6 @@
         background-color:#008080;
         color: aliceblue;
         }
-        p {
-            font-size: large;
-        }
     </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,12 +21,11 @@
         <div class="menu">
             <a class="home" href="index.html">WeatherCheck</a>
             <div class="input_form">
-                <p>Введіть місто </p>
-                <input id="city_input" type="text" name="city">
+                <input id="city_input" type="text" name="city" placeholder="Введіть назву міста" font->
                 <button type="button" id="search_button" >Дізнатись погоду</button>
             </div>
         </div>
         <script type="module" src="./js/main.js"></script>
     </div>
-    <div class="result" align="center"> </div>
+    <div class="result" style="display:none;" align="center"> </div>
 </body>
