@@ -10,14 +10,17 @@
     <script src="https://kit.fontawesome.com/acc2505e0d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>WeatherCheck</header>
-    <div class="input_form">
-        <h3>Enter your city</h3>
-        <input id="city_input" type="text" name="city">
-        <button type="button" id="search_button" >Дізнатись погоду</button>
+
+    <div class="header" align="center">
+        <div class="menu">
+            <a class="home" href="index.html">WeatherCheck</a>
+            <div class="input_form">
+                <p>Введіть місто </p>
+                <input id="city_input" type="text" name="city">
+                <button type="button" id="search_button" >Дізнатись погоду</button>
+            </div>
+        </div>
+        <script type="module" src="./js/main.js"></script>
     </div>
-    <div class="result">
-        
-    </div>
-    <script type="module" src="./js/main.js"></script>
+    <div class="result" align="center"> </div>
 </body>
