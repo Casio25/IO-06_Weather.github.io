@@ -61,7 +61,7 @@ function fetchWeather(city) {
                             console.log("mist");
                             break;
                         case "overcast clouds":
-                            bg.style.backgroundImage = "url('./img/overcast_clouds.jfif')"
+                            bg.style.backgroundImage = "url('img/overcast_clouds.jfif')"
                     }
                 return data;
             })
