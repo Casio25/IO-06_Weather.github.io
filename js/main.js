@@ -34,13 +34,13 @@ function fetchWeather(city) {
                     '<img src="https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png">' + '</br>';
                     switch (data.weather[0].description){
                         case "clear sky":
-                            console.log("clear sky");
+                            bg.style.backgroundImage = "url('img/clear_sky.jpg')"
                             break;
                         case "few clouds":
-                            console.log("few clouds");
+                            bg.style.backgroundImage = "url('img/few_clouds.jpg')"
                             break;
                         case "scattered clouds":
-                            console.log("scattered clouds");
+                            bg.style.backgroundImage = "url('img/scattered_clouds.jpg')";
                             break;
                         case "broken clouds":
                             console.log("broken clouds");
@@ -61,7 +61,8 @@ function fetchWeather(city) {
                             console.log("mist");
                             break;
                         case "overcast clouds":
-                            bg.style.backgroundImage = "url('img/overcast_clouds.jfif')"
+                            bg.style.backgroundImage = "url('img/overcast_clouds.jfif')";
+                            break;
                     }
                 return data;
             })
