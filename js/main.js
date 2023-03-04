@@ -3,11 +3,12 @@ const inputForm = document.querySelector(".input_form");
 const inputField = inputForm.querySelector("#city_input");
 const searchButton = inputForm.querySelector("#search_button");
 let result = document.querySelector('.result');
+let bg = document.querySelector(".bg");
 
 
-let weather = {
-    "apiKey": "6a2460f385d8fbe77660e390eb988c73"
-}
+// let weather = {
+//     "apiKey": "6a2460f385d8fbe77660e390eb988c73"
+// }
 /*Making fetch function*/
 function fetchWeather(city) {
     return fetch(
@@ -59,6 +60,8 @@ function fetchWeather(city) {
                         case "mist":
                             console.log("mist");
                             break;
+                        case "overcast clouds":
+                            bg.style.backgroundImage = "url('./img/overcast_clouds.jfif')"
                     }
                 return data;
             })

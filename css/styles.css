@@ -1,6 +1,24 @@
 * {
     margin: 0;
 }
+.bg{
+    background-image: none;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 68vh;
+    background-attachment: fixed;
+    padding-top: 50px;
+
+}
+.body{
+    height: 100%;
+    width: 100%;
+}
+
 
 .menu, .input_form {
     display: inline-block;
@@ -28,10 +46,13 @@
     width: 100%;
     max-width: 420px;
     background: #aeaeae;
-    margin-top: 5em;
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
     font-family: "Montserrat";
+    background-size: cover;
+    opacity: 0.7;
+
 
 }
 button {
