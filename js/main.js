@@ -43,7 +43,7 @@ function fetchWeather(city) {
                             bg.style.backgroundImage = "url('img/scattered_clouds.jpg')";
                             break;
                         case "broken clouds":
-                            console.log("broken clouds");
+                            bg.style.backgroundImage = "url('img/broken_clouds.jpg')";
                             break;
                         case "shower rain":
                             console.log("shower rain");
