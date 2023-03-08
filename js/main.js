@@ -63,6 +63,9 @@ function fetchWeather(city) {
                         case "overcast clouds":
                             bg.style.backgroundImage = "url('img/overcast_clouds.jfif')";
                             break;
+                        case "light rain":
+                            bg.style.backgroudImage = "url('img/scattered_clouds.jpg)";
+                            break;
                     }
                 return data;
             })
