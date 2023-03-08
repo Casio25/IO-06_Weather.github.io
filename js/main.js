@@ -64,7 +64,10 @@ function fetchWeather(city) {
                             bg.style.backgroundImage = "url('img/overcast_clouds.jfif')";
                             break;
                         case "light rain":
-                            bg.style.backgroudImage = "url('img/scattered_clouds.jpg)";
+                            bg.style.backgroundImage = "url('img/light_rain.jfif')";
+                            break;
+                        case "light snow":
+                            bg.style.backgroundImage = "url('img/light_snow.jpg')";
                             break;
                     }
                 return data;
@@ -84,3 +87,8 @@ function searchWeather(){
 
 }
 searchButton.addEventListener('click', searchWeather);
+document.body.addEventListener('keydown', (e) =>{
+    if (e.keyCode === 13){
+        searchWeather();
+    }
+})
