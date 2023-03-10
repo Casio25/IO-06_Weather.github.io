@@ -6,12 +6,6 @@ const saveButton = inputForm.querySelector("#save_button")
 let result = document.querySelector('.result');
 let bg = document.querySelector(".bg");
 let backendData = {};
-let backendDataCity = document.querySelector("#result-city").value,
-    backendDataTemp = document.querySelector("#result-temp").value,
-    backendDataPressure = document.querySelector("#result-pressure").value,
-    backendDataHumidity = document.querySelector("#result-humidity").value,
-    backendDataSpeed = document.querySelector("#result-speed").value,
-    backendDataDeg = document.querySelector("#result-degree").value
 
 
 // let weather = {
@@ -27,6 +21,9 @@ function fetchWeather(city) {
                 city: data.name,
                 temp: data.main.temp,
                 pressure: data.main.pressure,
+                humidity: data.main.humidity,
+                speed: data.wind.speed,
+                degree: data.wind.deg,
             }
             if (!response.ok) {
                 switch (response.status) {
@@ -44,8 +41,6 @@ function fetchWeather(city) {
                 "Speed: " + data.wind.speed + '</br>' +
                 "Degree: " + data.wind.deg + '</br>' +
                 '<img src="https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png">' + '</br>';
-            backendDataCity = data.name;
-            backendDataTemp = data.main.temp;
             switch (data.weather[0].description) {
                 case "clear sky":
                     bg.style.backgroundImage = "url('img/clear_sky.jpg')"
@@ -99,17 +94,16 @@ function searchWeather() {
     console.log(inputValue);
     result.style.display = "block";
     console.log(backendData);
+    saveButton.addEventListener('click', sendWeather);
 }
 function sendWeather() {
-    backendData = {
-        city: backendDataCity,
-        temp: backendDataTemp
-    }
     fetch("http://localhost:4000/data", {
         method: "POST",
         body: JSON.stringify(backendData)
     })
         .then(response => response.json())
+    saveButton.removeEventListener('click', sendWeather);
+    window.location.reload();
 
 }
 searchButton.addEventListener('click', searchWeather);
@@ -119,7 +113,6 @@ document.body.addEventListener('keydown', (e) => {
     }
 })
 
-saveButton.addEventListener('click', sendWeather);
 
 const data = await fetch("http://localhost:4000/data")
     .then(function (resp) {
