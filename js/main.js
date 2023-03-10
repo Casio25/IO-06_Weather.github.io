@@ -4,6 +4,7 @@ const inputField = inputForm.querySelector("#city_input");
 const searchButton = inputForm.querySelector("#search_button");
 let result = document.querySelector('.result');
 let bg = document.querySelector(".bg");
+let dataForBack = undefined;
 
 
 // let weather = {
@@ -15,7 +16,8 @@ function fetchWeather(city) {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6a2460f385d8fbe77660e390eb988c73`
     ).then((response) => { 
             return response.json().then((data) => {
-                console.log(data);
+                dataForBack.push(data);
+                console.log(data)
                 if (!response.ok){
                     switch(response.status){
                         case 400:
@@ -80,10 +82,15 @@ function fetchWeather(city) {
 }
 function searchWeather(){
     result.innerHTML =""
+    dataForBack = [];
+    let backendData = {
+        city: dataForBack[0],
+    }
     let inputValue = document.querySelector("#city_input").value;
     fetchWeather(inputValue);
     console.log(inputValue);
     result.style.display = "block";
+    console.log(backendData);
 
 }
 searchButton.addEventListener('click', searchWeather);
@@ -92,3 +99,11 @@ document.body.addEventListener('keydown', (e) =>{
         searchWeather();
     }
 })
+
+const data = await fetch("http://localhost:4000/data")
+    .then(function (resp){
+        return resp.json()
+    })
+    .catch((error) => {
+        return `${error}`;
+    });
