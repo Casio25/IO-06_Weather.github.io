@@ -17,6 +17,7 @@ function fetchWeather(city) {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6a2460f385d8fbe77660e390eb988c73`
     ).then((response) => {
         return response.json().then((data) => {
+            console.log(data);
             backendData = {
                 city: data.name,
                 temp: data.main.temp,
@@ -31,7 +32,8 @@ function fetchWeather(city) {
                         alert("Ви нічого не ввели");
                         break;
                     case 404:
-                        alert("Вашого міста не існує, так само як і Житомира")
+                        alert("Вашого міста не існує, так само як і Житомира");
+                        break;
                 }
             }
             result.innerHTML = "City: " + data.name + '</br>' +
@@ -77,6 +79,9 @@ function fetchWeather(city) {
                     break;
                 case "light snow":
                     bg.style.backgroundImage = "url('img/light_snow.jpg')";
+                    break;
+                case "moderate rain":
+                    bg.style.backgroundImage = "url('')";
                     break;
             }
             return data;
