@@ -13,21 +13,25 @@
 <body>
 
     <div class="header" align="center">
-        <div class="menu">
+        <div class="menu1">
             <a class="home" href="index.html">WeatherCheck</a>
             <div class="input_form">
                 <div id="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input id="city_input" type="text" name="city" placeholder="Введіть назву міста">
                 </div>
-                <button class ="custom-button" type="button" id="search_button" >Дізнатись погоду</button>
-                <button class ="custom-button" type="button" id="save_button">Save data</button>
+                <div class="buttons">
+                    <button class ="custom-button" type="button" id="search_button" >Дізнатись погоду</button>
+                    <button class ="custom-button" type="button" id="save_button">Зберегти дані</button>
+                </div>
             </div>
         </div>
+        <div class="menu2">
+            <a class="today">Сьогодні</a>
+            <a class="week">Тиждень</a>
     </div>
     <div class="bg">
-            <div class="result" style="display:none;" align="center">
-            </div>
+            <div class="result" style="display:none;" align="center"></div>
     </div>
     <script type="module" src="./js/main.js"></script>
     <script src="https://kit.fontawesome.com/7c0d568f8b.js" crossorigin="anonymous"></script>

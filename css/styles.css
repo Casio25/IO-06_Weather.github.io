@@ -3,7 +3,6 @@
 }
 
 .header {
-    background-color: #008080;
     color: aliceblue;
 }
 
@@ -25,43 +24,83 @@
     width: 100%;
 }
 
-.menu {
+.menu1 {
+    background-color: #026c74;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    /* change from space-between */
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    flex-wrap: wrap;
+}
+
+.menu2 {
+    display: flex;
+    padding: 15px 0px;
+    background-color: #025157;
+    justify-content: space-around;
+}
+
+.today, .week {
+    font-family: "Montserrat";
+    font-size: larger;
 }
 
 .home {
-    font-size: 30px;
+    display:flex;
+    flex-basis: 40%;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
     color: aliceblue;
     text-decoration: none;
     font-family: "Montserrat";
-    margin-right: 2em;
-    /* add margin-right */
 }
 
 .input_form {
-    display: flex;
-    flex-direction: column;
+    display:flex;
+    flex-basis: 60%;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    margin-top: 5em;
-    width: 50%;
-    max-width: 400px;
+    justify-content: flex-start;
     text-align: center;
-    /* add text-align */
+}
+#city_input {
+    font-size: medium;
+    background: rgb(235, 235, 235);
+    border: 0;
+    text-align: center;
+    width: 100%;
 }
 
+#search {
+    display: flex;
+    background: rgb(235, 235, 235);
+    border: 0;
+    border-radius: 20px;
+    padding: 10px;
+    min-width: 200px;
+    width: 30%;
+    padding-right: 30px;
+    align-items: center;
+}
+
+i {
+    color: black;
+}
+.buttons{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 3%;
+}
 .result {
+    flex-basis: 30%;
     padding: 2em;
     border-radius: 30px;
     width: 100%;
     max-width: 420px;
-    background: #dadada;
+    background: #8d8d8df8;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
@@ -71,68 +110,28 @@
 }
 
 .custom-button {
-    position: relative;
-    width: 180px;
-    height: 60px;
-    margin-top: 2em;
-    overflow: hidden;
-    border-radius: 30px;
-    background-color: #008080;
+    position: sticky;
+    left: 1000px;
+    box-sizing: border-box;
+    width: 160px;
+    height: 40px;
+    max-height: 60px;
+    margin: 5px 0px;
+    font-family: -apple-system, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue',
+        Ubuntu, sans-serif;
+    font-size: 18px;
+    line-height: 1.15;
     color: #fff;
-    font-family: "Montserrat";
-    font-size: 1.2em;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    background-color: #405cf5;
+    border-width: 0;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: rgb(50 50 93 / 10%) 0 0 0 1px inset,
+        rgb(50 50 93 / 10%) 0 2px 5px 0, rgb(0 0 0 / 7%) 0 1px 1px 0;
+    appearance: button;
+    backface-visibility: hidden;
 }
-
-.custom-button:before,
-.custom-button:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.3s ease-in-out;
-}
-
-.custom-button:before {
-    background-color: #fff;
-    transform: translate(-100%, 0) skewX(45deg);
-}
-
-.custom-button:after {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translate(100%, 0) skewX(-45deg);
-}
-
-.custom-button:hover:before {
-    transform: translate(0, 0) skewX(45deg);
-}
-
-.custom-button:hover:after {
-    transform: translate(0, 0) skewX(-45deg);
-}
-
-#city_input {
-    font-size: medium;
-    background: aliceblue;
-    border: 0;
-    text-align: center;
-    padding-right: 70px;
-    padding-left: 40px;
-    flex-grow: 1;
-}
-
-#search {
-    background: aliceblue;
-    border: 0;
-    border-radius: 20px;
-    padding: 10px;
-    margin-left: 1em;
-}
-
-i {
-    color: black;
+.custom-button:hover{
+    background-color: #354dd2;
 }
